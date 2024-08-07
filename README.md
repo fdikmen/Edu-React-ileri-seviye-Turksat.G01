@@ -19,4 +19,17 @@
 ## Part02
 
 - Özet
+- useState
+  ```node
+  const name = "Teddy"
+  const [name,setName] =useState()
+  setName("new new new data")
+  ```
 - useEffect
+- useContext
+- useRef
+- useReducer
+- useCallback | React.memo - useMemo
+- uygulama ici state yönetimi icin en iyi pratikler
+- custom Hooks
+- clean code
