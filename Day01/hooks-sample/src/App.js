@@ -5,8 +5,15 @@ import { UserInfoProvider, ThemeProvider } from "./hooks/ContextHooks";
 import UseRefSample from "./components/UseRefSample";
 import UseReducerSample from "./components/UseReducerSample";
 import UseCallbackSample from "./components/UseCallbackSample";
+import useWindowSize from "./hooks/useWindowSize";
 
 export default function App() {
+  /*const size = useWindowSize();
+  const _width=size.width;
+  const _height=size.height;*/
+
+  const { width, height } = useWindowSize();
+
   return (
     // <UserInfoProvider>
     //   <ThemeProvider>
@@ -16,7 +23,12 @@ export default function App() {
     // </UserInfoProvider>
     // <UseRefSample />
     // <UseReducerSample />
-    <UseCallbackSample />
+    <>
+      <UseCallbackSample />
+
+      <h1>width: {width}</h1>
+      <h1>height: {height}</h1>
+    </>
   );
 }
 

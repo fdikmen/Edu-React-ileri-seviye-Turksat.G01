@@ -1,12 +1,16 @@
 # Edu-React-ileri-seviye-Turksat.G01
 
-# Day01 - 07082024
+## Day01 - 07.08.2024
 
-## Part01
+### Part01
 
-- React Temelleri ve React Prensibi
-- Higher Order Component
-- props-state-useRef kavramlari
+#### Konular
+
+- React Temelleri ve Prensipleri
+- Higher Order Component (HOC)
+- Props, State ve useRef Kavramları
+
+#### Sorular
 
 ```node
 1. Array'leri dolaşmak için `map` yerine `forEach` kullanabilir miyiz? Bu iki yöntem arasında performans açısından fark var mı?
@@ -20,11 +24,13 @@
 
 - Özet
 - useState
+
   ```node
   const name = "Teddy"
   const [name,setName] =useState()
   setName("new new new data")
   ```
+
 - useEffect
 - useContext
 - useRef
@@ -32,4 +38,16 @@
 - useCallback | React.memo - useMemo
 - uygulama ici state yönetimi icin en iyi pratikler
 - custom Hooks
+
+
+## Day01 - 08.08.2024
+
+### Part01
+
+- custom Hooks
 - clean code
+- Hata yakalama
+- getDerivedStateFromError
+- Performans - Gereksiz Rerenderlarin önlenmsi
+- React-lazy Suspense
+- Redux

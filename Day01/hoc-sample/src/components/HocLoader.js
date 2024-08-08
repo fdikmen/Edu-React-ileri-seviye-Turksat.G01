@@ -20,3 +20,17 @@ export default HocLoader;
 // Loading
 // else()
 // Component
+
+
+/**
+ const HocLoader = (WrappedComponent, field) => {
+  return function HocLoader(props) {
+    console.log("DATA", props);
+    return !props[field].length ? (
+      <h1>Loading</h1>
+    ) : (
+      <WrappedComponent {...props} />
+    );
+  };
+};
+ */
