@@ -51,3 +51,22 @@
 - Performans - Gereksiz Rerenderlarin önlenmsi
 - React-lazy Suspense
 - Redux
+
+https://medium.com/@fdikmen/a-redux-toolkit-project-structure-guide-58093baa88a5
+
+```node
+src/
+|-- app/
+|   |-- store.js
+|-- features/
+|   |-- posts/
+|       |-- postsSlice.js
+|       |-- PostsList.js
+|       |-- AddPostForm.js
+|       |-- EditPostForm.js
+|       |-- PostItem.js
+|-- App.js
+|-- index.js
+```
+
+<!-- npm i @reduxjs/toolkit redux react-redux -->
