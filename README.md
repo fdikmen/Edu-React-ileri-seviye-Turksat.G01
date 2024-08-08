@@ -1,10 +1,8 @@
-# Edu-React-ileri-seviye-Turksat.G01
+# Edu-React-İleri-Seviye-Turksat.G01
 
 ## Day01 - 07.08.2024
 
-### Part01
-
-#### Konular
+### Part01 - Konular
 
 - React Temelleri ve Prensipleri
 - Higher Order Component (HOC)
@@ -12,7 +10,7 @@
 
 #### Sorular
 
-```node
+```bash
 1. Array'leri dolaşmak için `map` yerine `forEach` kullanabilir miyiz? Bu iki yöntem arasında performans açısından fark var mı?
 2. React'te `props` ve `state` kavramları nelerdir? Aralarındaki farklar nelerdir?
 3. `useEffect` hook'unun çalışma mantığını açıklayabilir misiniz?
@@ -20,7 +18,7 @@
 5. `ref` nedir ve React'te nasıl kullanılır?
 ```
 
-## Part02
+### Part02 - Konular
 
 - Özet
 - useState
@@ -36,25 +34,28 @@
 - useRef
 - useReducer
 - useCallback | React.memo - useMemo
-- uygulama ici state yönetimi icin en iyi pratikler
-- custom Hooks
+- Uygulama içi state yönetimi için en iyi pratikler
+- Custom Hooks
 
+## Day02 - 08.08.2024
 
-## Day01 - 08.08.2024
+### Part01 - Konular
 
-### Part01
+- Custom Hooks
+- Clean Code Prensipleri
+- Hata Yakalama
+  - `getDerivedStateFromError` Metodu
+- Performans Optimizasyonu
+  - Gereksiz Rerenderların Önlenmesi
 
-- custom Hooks
-- clean code
-- Hata yakalama
-- getDerivedStateFromError
-- Performans - Gereksiz Rerenderlarin önlenmsi
-- React-lazy Suspense
-- Redux
+### Part02 - Konular
 
-https://medium.com/@fdikmen/a-redux-toolkit-project-structure-guide-58093baa88a5
+- React-Lazy ve Suspense ile Kod Ayrıştırma
+- Redux ile State Yönetimi
 
-```node
+[Redux Toolkit Proje Klasör Yapısı](https://medium.com/@fdikmen/a-redux-toolkit-project-structure-guide-58093baa88a5)
+
+```bash
 src/
 |-- app/
 |   |-- store.js
@@ -69,4 +70,8 @@ src/
 |-- index.js
 ```
 
-<!-- npm i @reduxjs/toolkit redux react-redux -->
+- Vite projesine redux kurulumu
+
+```bash
+  npm i @reduxjs/toolkit redux react-redux
+```
