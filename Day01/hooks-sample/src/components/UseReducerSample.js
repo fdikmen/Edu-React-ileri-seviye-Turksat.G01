@@ -28,3 +28,17 @@ export default function UseReducerSample() {
     </div>
   );
 }
+
+
+export function UseReducerSample02() {
+  const [state, dispatch] = useReducer(reducer01, initialState01);
+  return (
+    <div>
+      UseReducerSample
+      <h1>{state.count}</h1>
+      <button onClick={() => dispatch({ type: "INCREMENT" })}>Increment</button>
+      <button onClick={() => dispatch({ type: "DECREMENT" })}>Decrement</button>
+      <button onClick={() => dispatch({ type: "ADD-2" })}>Add+2</button>
+    </div>
+  );
+}

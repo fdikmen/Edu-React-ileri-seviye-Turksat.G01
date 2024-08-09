@@ -1,11 +1,9 @@
-import axios from "axios";
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-
-const apiUrl = "https://jsonplaceholder.typicode.com/posts";
+import { getPosts, getPostById, addPost } from "./postApi";
 
 // Get All Posts
 export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
-  const response = await axios.get(apiUrl);
+  const response = await getPosts();
   return response.data;
 });
 
@@ -13,7 +11,7 @@ export const fetchPosts = createAsyncThunk("posts/fetchPosts", async () => {
 export const fetchPostById = createAsyncThunk(
   "posts/fetchPostById",
   async (id) => {
-    const response = await axios.get(`${apiUrl}/${id}`);
+    const response = await getPostById(id);
     return response.data;
   }
 );
@@ -22,27 +20,24 @@ export const fetchPostById = createAsyncThunk(
 export const addNewPost = createAsyncThunk(
   "posts/addNewPost",
   async (initialPost) => {
-    const response = await axios.post(apiUrl, initialPost);
+    const response = await addPost(initialPost);
     return response.data;
   }
 );
 
 // Update Post
 export const updatePost = createAsyncThunk("posts/updatePost", async (post) => {
-  const url = `${apiUrl}/${post.id}`;
-  const response = await axios.put(url, post);
+  const response = await updatePost(post);
   return response.data;
 });
 
 // Delete Post
 export const deletePost = createAsyncThunk("posts/deletePost", async (id) => {
-  const url = `${apiUrl}/${id}`;
-  await axios.delete(url);
+  await deletePost(id);
   return id;
 });
 
-const initialState = 
-{
+const initialState = {
   items: [
     {
       userId: 1231,
@@ -54,10 +49,10 @@ const initialState =
   item: {},
   status: "idle",
   error: null,
-}
+};
 const postSlice = createSlice({
   name: "posts",
-  initialState,//initialState: initialState,
+  initialState, //initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -66,7 +61,7 @@ const postSlice = createSlice({
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.items = action.payload;//return response.data;
+        state.items = action.payload; //return response.data;
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed";

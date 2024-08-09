@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { useEffect } from "react";
 import { updatePost,fetchPostById } from "./postSlice";
+import "./EditPostForm.css";
 
 export default function EditPostForm() {
   const { postId } = useParams();
@@ -62,8 +63,6 @@ export default function EditPostForm() {
           value={title}
           onChange={(e) => setTitle(e.target.value)}
         />
-        <br />
-        <br />
         <label htmlFor="body">Body:</label>
         <textarea
           id="body"
@@ -71,7 +70,6 @@ export default function EditPostForm() {
           value={body}
           onChange={(e) => setBody(e.target.value)}
         />
-        <br />
         <button type="submit">Update Post</button>
       </form>
     </section>

@@ -77,7 +77,6 @@ src/
   npm i @reduxjs/toolkit redux react-redux
 ```
 
-
 ## Day03 - 09.08.2024
 
 ### Part01 - Konular
@@ -91,6 +90,27 @@ src/
   - All Catch Opr. *
   - Dinamik Route
   - Nested Route
+- CRA is Dead?
 - UI Test
+  - npm install -D vitest
+  - test script ini ekle
+  - JSDom npm i jsdom
+  - Konfigure et =>vite.config.js
+  - describe, it, expect
+- React Testing Library
+
+```bash
+npm install --save-dev @testing-library/jest-dom @testing-library/react @testing-library/user-event
+```
+  - test/setup.js
+  - Konfigure et =>vite.config.js
+  - render, screen
+
 - Gelismis API kullanimi
-- ...
+- Temel Uygulama Güvenligi Teknikleri
+- env
+- Build
+- CI/CD
+- MicroFrontend
+
+https://github.com/fdikmen/Edu-React-ileri-seviye-AB.G01/blob/main/06.MicroFrontend/microfrontend-sample
