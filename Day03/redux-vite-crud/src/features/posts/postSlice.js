@@ -40,22 +40,24 @@ export const deletePost = createAsyncThunk("posts/deletePost", async (id) => {
   await axios.delete(url);
   return id;
 });
-const initialItem = [
-  {
-    userId: 1231,
-    id: 1231,
-    title: "Test Data",
-    body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
-  },
-];
+
+const initialState = 
+{
+  items: [
+    {
+      userId: 1231,
+      id: 1231,
+      title: "Test Data",
+      body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto",
+    },
+  ],
+  item: {},
+  status: "idle",
+  error: null,
+}
 const postSlice = createSlice({
   name: "posts",
-  initialState: {
-    items: initialItem,
-    item: {},
-    status: "idle",
-    error: null,
-  },
+  initialState,//initialState: initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
@@ -64,7 +66,7 @@ const postSlice = createSlice({
       })
       .addCase(fetchPosts.fulfilled, (state, action) => {
         state.status = "succeeded";
-        state.items = action.payload;
+        state.items = action.payload;//return response.data;
       })
       .addCase(fetchPosts.rejected, (state, action) => {
         state.status = "failed";
@@ -76,31 +78,19 @@ const postSlice = createSlice({
       .addCase(fetchPostById.fulfilled, (state, action) => {
         state.status = "succeeded";
         state.item = action.payload;
+      })
+      .addCase(addNewPost.fulfilled, (state, action) => {
+        state.items.push(action.payload);
+      })
+      .addCase(updatePost.fulfilled, (state, action) => {
+        const { id, title, body } = action.payload;
+        const existingPost = state.items.find((post) => post.id === id);
+        if (existingPost) {
+          existingPost.title = title;
+          existingPost.body = body;
+        }
       });
   },
 });
-/*
-extraReducers: (builder) => {
-    builder
-      .addCase(fetchPosts.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(fetchPosts.fulfilled, (state, action) => {
-        state.status = "succeeded";
-        state.items = action.payload;
-      })
-      .addCase(fetchPosts.rejected, (state, action) => {
-        state.status = "failed";
-        state.error = action.error.message;
-      })
-      .addCase(fetchPostById.pending, (state) => {
-        state.status = "loading";
-      })
-      .addCase(fetchPostById.fulfilled, (state, action) => {
-        state.status = "succeeded";
-        state.item = action.payload;
-      })
-      .addCase(fetchPostById.rejected, (
-      */
 
 export default postSlice.reducer;

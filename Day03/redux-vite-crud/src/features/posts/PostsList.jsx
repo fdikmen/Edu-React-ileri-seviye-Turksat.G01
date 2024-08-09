@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchPosts } from "./postSlice";
+import PostItem from "./PostItem";
 
 export default function PostsList() {
   const posts = useSelector((state) => state.posts);
@@ -15,17 +16,7 @@ export default function PostsList() {
   return (
     <div>
       PostsList
-      <ul>
-        {posts.items.map((post) => (
-          <li key={post.id}>
-            <p>
-              <strong>{post.title}</strong>
-              <br />
-              {post.body}
-            </p>
-          </li>
-        ))}
-      </ul>
+     <PostItem posts={posts.items} />
     </div>
   );
 }

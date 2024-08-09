@@ -50,7 +50,7 @@
 
 ### Part02 - Konular
 
-- React-Lazy ve Suspense ile Kod Ayrıştırma
+- React-Lazy ve Suspense
 - Redux ile State Yönetimi
 
 [Redux Toolkit Proje Klasör Yapısı](https://medium.com/@fdikmen/a-redux-toolkit-project-structure-guide-58093baa88a5)
@@ -62,10 +62,11 @@ src/
 |-- features/
 |   |-- posts/
 |       |-- postsSlice.js
-|       |-- PostsList.js
-|       |-- AddPostForm.js
-|       |-- EditPostForm.js
-|       |-- PostItem.js
+|       |-- PostsList.jsx
+|       |-- AddPostForm.jsx
+|       |-- EditPostForm.jsx
+|       |-- PostItem.jsx
+|       |-- PostDetail.jsx
 |-- App.js
 |-- index.js
 ```
@@ -75,3 +76,21 @@ src/
 ```bash
   npm i @reduxjs/toolkit redux react-redux
 ```
+
+
+## Day03 - 09.08.2024
+
+### Part01 - Konular
+
+- Redux CRUD
+- React Router ile Gelişmiş Yönlendirme Teknikleri
+  - Kurulum (npm i react-router-dom)
+  - Route, BrowserRoute Kodlanmasi
+  - Static Route
+  - Link
+  - All Catch Opr. *
+  - Dinamik Route
+  - Nested Route
+- UI Test
+- Gelismis API kullanimi
+- ...
